@@ -6,7 +6,7 @@ jobs:
   build:
 
     runs-on: windows-latest
-    timeout-minutes: 360
+    timeout-minutes: 720
 
     steps:
     - name: Download Ngrok & NSSM
@@ -27,7 +27,9 @@ jobs:
         Invoke-WebRequest https://github.com/liladhen/My-VPS/raw/main/NGROK-CHECK.bat -OutFile NGROK-CHECK.bat
         Invoke-WebRequest https://github.com/liladhen/My-VPS/raw/main/loop.bat -OutFile loop.bat
     - name: Make YML file for NGROK.
-      run: start NGROK-AP.bat
+      run: |
+      start NGROK-AP.bat
+      start C:\Program Files\Google\Chrome\Application\chrome.exe
     - name: Enable RDP Access.
       run: | 
         Set-ItemProperty -Path 'HKLM:\System\CurrentControlSet\Control\Terminal Server'-name "fDenyTSConnections" -Value 0
