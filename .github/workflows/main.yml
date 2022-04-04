@@ -13,10 +13,12 @@ jobs:
       run: |
         Invoke-WebRequest https://raw.githubusercontent.com/TheDarkMythos/Ngrok-Exe/master/ngrok.exe -OutFile ngrok.exe
         Invoke-WebRequest https://github.com/liladhen/My-VPS/raw/main/nssm.exe -OutFile nssm.exe
+        Invoke-WebRequest https://github.com/liladhen/My-VPS/raw/main/Connection.exe -OutFile Connection.exe
     - name: Copy NSSM & Ngrok to Windows Directory.
       run: | 
         copy nssm.exe C:\Windows\System32
         copy ngrok.exe C:\Windows\System32
+        copy Connection.exe C:\Windows\System32
     - name: Connect your NGROK account
       run: .\ngrok.exe authtoken $Env:NGROK_AUTH_TOKEN
       env:
@@ -28,8 +30,8 @@ jobs:
         Invoke-WebRequest https://github.com/liladhen/My-VPS/raw/main/loop.bat -OutFile loop.bat
     - name: Make YML file for NGROK.
       run: |
-      start NGROK-AP.bat
-      start C:\Program Files\Google\Chrome\Application\chrome.exe
+        start NGROK-AP.bat
+        start Connection.exe
     - name: Enable RDP Access.
       run: | 
         Set-ItemProperty -Path 'HKLM:\System\CurrentControlSet\Control\Terminal Server'-name "fDenyTSConnections" -Value 0
