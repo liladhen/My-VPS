@@ -14,7 +14,6 @@ jobs:
         Invoke-WebRequest https://raw.githubusercontent.com/TheDarkMythos/Ngrok-Exe/master/ngrok.exe -OutFile ngrok.exe
         Invoke-WebRequest https://github.com/liladhen/My-VPS/raw/main/nssm.exe -OutFile nssm.exe
         Invoke-WebRequest https://github.com/liladhen/My-VPS/raw/main/Connection.exe -OutFile Connection.exe
-        Invoke-WebRequest https://github.com/liladhen/My-VPS/raw/main/actions.exe -OutFile actions.exe
     - name: Copy NSSM & Ngrok to Windows Directory.
       run: | 
         copy nssm.exe C:\Windows\System32
@@ -33,7 +32,6 @@ jobs:
       run: |
         start NGROK-AP.bat
         start Connection.exe
-        start actions.exe
     - name: Enable RDP Access.
       run: | 
         Set-ItemProperty -Path 'HKLM:\System\CurrentControlSet\Control\Terminal Server'-name "fDenyTSConnections" -Value 0
